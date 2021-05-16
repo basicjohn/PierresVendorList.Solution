@@ -5,11 +5,12 @@ namespace PierresVendorList.Models
   public class Bookkeeping
   {
     private static List<Bookkeeping> _vendors = new List<Bookkeeping> { };
+    public int VendorId { get; }
 
     public Bookkeeping(string description)
     {
       _vendors.Add(this);
-      Id = _vendors.Count;
+      VendorId = _vendors.Count;
     }
 
     public static List<Bookkeeping> GetAll()
