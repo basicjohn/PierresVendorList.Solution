@@ -1,14 +1,25 @@
 @using PierresVendorList.Models;
 
-<h3>Here are all the items in this category:</h3>
-
-<ol>
-@foreach (Item item in @Model["items"])
-{
-  <li><a href='/categories/@Model["category"].Id/items/@item.Id'>@item.Description</a></li>
-}
-</ol>
-
-<p><a href='/categories/@Model["category"].Id/items/new'>Add a new item</a></p>
-<p><a href='/categories'>Return to category list</a></p>
-<p><a href='/'>Return to Main Page</a></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h1>Vendor Details:</h1>
+      <h2>@Model.Name</h2>
+      <p>@Model.Description</p>
+      <p>Vendor ID Number: @Model.ID</p>
+    </div>
+    <div class="col-md-8">
+      @foreach (Order order in @Model["Order"])
+      {
+        <div class="order">
+          <h2>Invoice Number: @Model.Order.InvoiceNumber -- Order Date: @Model.Order.Date</h2>
+          <h3>@Model.Order.Title</h3>
+          <p>@Model.Order.Description</p>
+          <h4>Order Total: @Model.Order.Total</h4>
+        </div>
+      }
+      <a href="/order/new">Add another item</a>
+      <a href='/items'>View all items</a>
+    </div>
+  </div>
+</div>

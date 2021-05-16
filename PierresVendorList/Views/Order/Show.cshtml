@@ -1,3 +1,5 @@
+@using PierresVendorList.Models;
+
 <div class="container">
   <div class="row">
     <div class="col-md-4">
@@ -7,15 +9,15 @@
       <p>Vendor ID Number: @Model.ID</p>
     </div>
     <div class="col-md-8">
-      <div class="order">
-        <h2>Invoice Number: @Model.Order.InvoiceNumber</h2>
-        <h3>@Model.Order.Title</h3>
-        <h4></h4>
-        <p>@Model.Order.Description</p>
-        <h5></h5>
-      </div>
-
-
+      @foreach (Order order in @Model["Order"])
+      {
+        <div class="order">
+          <h2>Invoice Number: @Model.Order.InvoiceNumber -- Order Date: @Model.Order.Date</h2>
+          <h3>@Model.Order.Title</h3>
+          <p>@Model.Order.Description</p>
+          <h4>Order Total: @Model.Order.Total</h4>
+        </div>
+      }
       <a href="/order/new">Add another item</a>
       <a href='/items'>View all items</a>
     </div>
