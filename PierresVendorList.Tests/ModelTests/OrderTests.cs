@@ -1,15 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 using PierresVendorList.Models;
-
+using System.Collections.Generic;
 using System;
 
 namespace PierresVendorList.Tests
 {
+  [TestClass]
   public class OrderTests
   {
     // {
-    // [TestClass]
     // public class OrderTests : IDisposable
     // {
 
@@ -25,19 +24,19 @@ namespace PierresVendorList.Tests
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
-    //   [TestMethod]
-    //   public void GetDescription_ReturnsDescription_String()
-    //   {
-    //     //Arrange
-    //     string description = "Walk the dog.";
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      //Arrange
+      string vendorName = "Sally's Cupcakes";
 
-    //     //Act
-    //     Item newItem = new Item(description);
-    //     string result = newItem.Description;
+      //Act
+      Order newOrder = new Order(vendorName, "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
+      string result = newOrder.VendorName;
 
-    //     //Assert
-    //     Assert.AreEqual(description, result);
-    //   }
+      //Assert
+      Assert.AreEqual(vendorName, result);
+    }
 
     //   [TestMethod]
     //   public void SetDescription_SetDescription_String()
