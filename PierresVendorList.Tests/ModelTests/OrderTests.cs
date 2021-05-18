@@ -25,47 +25,37 @@ namespace PierresVendorList.Tests
     }
 
     [TestMethod]
-    public void GetDescription_ReturnsDescription_String()
+    public void GetVendorName_ReturnsVendorName_String()
     {
-      //Arrange
       string vendorName = "Sally's Cupcakes";
-
-      //Act
       Order newOrder = new Order(vendorName, "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
       string result = newOrder.VendorName;
-
-      //Assert
       Assert.AreEqual(vendorName, result);
     }
 
-    //   [TestMethod]
-    //   public void SetDescription_SetDescription_String()
-    //   {
-    //     //Arrange
-    //     string description = "Walk the dog.";
-    //     Item newItem = new Item(description);
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string vendorName = "Sally's Cupcakes";
+      Order newOrder = new Order(vendorName, "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
+      string updatedVendorName = "Patty's Cupcakes";
+      newOrder.VendorName = updatedVendorName;
+      string result = newOrder.VendorName;
+      Assert.AreEqual(updatedVendorName, result);
+    }
 
-    //     //Act
-    //     string updatedDescription = "Do the dishes";
-    //     newItem.Description = updatedDescription;
-    //     string result = newItem.Description;
+    // [TestMethod]
+    // public void GetAll_ReturnsEmptyList_ItemList()
+    // {
+    //   // Arrange
+    //   List<Item> newList = new List<Item> { };
 
-    //     //Assert
-    //     Assert.AreEqual(updatedDescription, result);
-    //   }
+    //   // Act
+    //   List<Item> result = Item.GetAll();
 
-    //   [TestMethod]
-    //   public void GetAll_ReturnsEmptyList_ItemList()
-    //   {
-    //     // Arrange
-    //     List<Item> newList = new List<Item> { };
-
-    //     // Act
-    //     List<Item> result = Item.GetAll();
-
-    //     // Assert
-    //     CollectionAssert.AreEqual(newList, result);
-    //   }
+    //   // Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
 
     //   [TestMethod]
     //   public void GetAll_ReturnsItems_ItemList()
