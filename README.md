@@ -1,8 +1,8 @@
-# Pierre's Bakery
+# Pierre's Bakery Vendor List
 
-#### _This is the Pierre's Bakery Project created by John Edmondson_
+#### _This is the Pierre's Bakery Vendor List Project created by John Edmondson_
 
-### Week 8 Project for the March 2021 Co-hort session: Test-Driven Development with C#
+### Week 9 Project for the March 2021 Co-hort session: Basic Web Applications
 
 #### By _**John Edmondson**_
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-_This project is created to be a console app written in C# to take orders for Pierre's Bakery._
+_This project is created to be a vendor list app written in C# to take orders for Pierre's Bakery._
 
 ## Setup and Use
 

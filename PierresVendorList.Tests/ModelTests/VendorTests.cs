@@ -36,6 +36,15 @@ namespace PierresVendorList.Tests
       Assert.AreEqual(1, result);
     }
 
+  public void GetVenderandOrder_ReturnsInvoiceNumber_Int()
+    {
+      int invoiceId = 123854;
+      Order newOrder = new Order("Sally's Cupcakes", "2/29/2021", "example title", "27 loaves of Rustic bread", invoiceId, 48);
+      int result = newOrder.InvoiceNumber;
+      Assert.AreEqual(invoiceId, result);
+    }
+
+
       // [TestMethod]
       // public void GetAll_ReturnsAllCategoryObjects_CategoryList()
       // {
