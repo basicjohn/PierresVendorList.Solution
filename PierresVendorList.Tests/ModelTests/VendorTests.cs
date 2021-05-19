@@ -36,32 +36,36 @@ namespace PierresVendorList.Tests
       Assert.AreEqual(1, result);
     }
 
-  public void GetVenderandOrder_ReturnsInvoiceNumber_Int()
+    public void GetVenderandOrder_ReturnsInvoiceNumber_Int()
     {
       int invoiceId = 123854;
-      Order newOrder = new Order("Sally's Cupcakes", "2/29/2021", "example title", "27 loaves of Rustic bread", invoiceId, 48);
-      int result = newOrder.InvoiceNumber;
+      Vendor newVendor = new Vendor("Sally's Cupcakes", "Sally makes regular orders to fill her baking needs.");
+      Order newOrder = new Order("Sally's Cupcakes", "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
+      List<Vendor> newOrders = new List<Vendor> { newOrder };
+      newVendor.AddOrder(newOrder);
+  
+      int result = newVendor.Orders.IndexOf(1);
       Assert.AreEqual(invoiceId, result);
     }
 
 
-      // [TestMethod]
-      // public void GetAll_ReturnsAllCategoryObjects_CategoryList()
-      // {
-      //   // Arrange
-      //   string name01 = "Work";
-      //   string name02 = "School";
-      //   Category newCategory1 = new Category(name01);
-      //   Category newCategory2 = new Category(name02);
-      //   List<Category> newList = new List<Category> { newCategory1, newCategory2 };
+    // [TestMethod]
+    // public void GetAll_ReturnsAllCategoryObjects_CategoryList()
+    // {
+    //   // Arrange
+    //   string name01 = "Work";
+    //   string name02 = "School";
+    //   Category newCategory1 = new Category(name01);
+    //   Category newCategory2 = new Category(name02);
+    //   List<Category> newList = new List<Category> { newCategory1, newCategory2 };
 
-      //   // Act
-      //   List<Category> result = Category.GetAll();
+    //   // Act
+    //   List<Category> result = Category.GetAll();
 
-      //   // Assert
-      //   CollectionAssert.AreEqual(newList, result);
+    //   // Assert
+    //   CollectionAssert.AreEqual(newList, result);
 
-      // }
+    // }
     //   [TestMethod]
     //   public void Find_ReturnsCorrectCategory_Category()
     //   {
