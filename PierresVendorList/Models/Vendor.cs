@@ -4,7 +4,7 @@ namespace PierresVendorList.Models
 {
   public class Vendor
   {
-    private static List<Vendor> _instances = new List<Vendor> { };
+    private static Dictionary<int, Vendor> _vendors = new Dictionary<int, Vendor> { };
     public string Name { get; set; }
     public int Id { get; }
 
@@ -16,21 +16,21 @@ namespace PierresVendorList.Models
     {
       Name = vendorName;
       Description = description;
-      _instances.Add(this);
-      Id = _instances.Count;
+      _vendors.Add(this);
+      Id = _vendors.Count;
       Orders = new List<Order> { };
     }
     public static void ClearAll()
     {
-      _instances.Clear();
+      _vendors.Clear();
     }
-    public static List<Vendor> GetAll()
+    public static Dictionary<int, Vendor> GetAll()
     {
-      return _instances;
+      return _vendors;
     }
     public static Vendor Find(int searchId)
     {
-      return _instances[searchId - 1];
+      return _vendors[searchId - 1];
     }
     public void AddOrder(Order order)
     {
