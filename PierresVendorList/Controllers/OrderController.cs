@@ -4,42 +4,32 @@ using System.Collections.Generic;
 
 namespace PierresVendorList.Controllers
 {
-  public class ItemsController : Controller
+  public class OrdersController : Controller
   {
 
-    // [HttpGet("/items")]
-    // public ActionResult Index()
-    // {
-    //   List<Item> allItems = Item.GetAll();
-    //   return View(allItems);
-    // }
+    [HttpGet("/vendors/{vendorId}/Orders/new")]
+    public ActionResult New(int vendorId)
+    {
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
+    }
 
-    // [HttpGet("/items/new")]
-    // public ActionResult New()
-    // {
-    //   return View();
-    // }
+    [HttpPost("/Orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAll();
+      return View();
+    }
 
-    // [HttpGet("/items/{id}")]
-    // public ActionResult Show(int id)
-    // {
-    //   Item foundItem = Item.Find(id);
-    //   return View(foundItem);
-    // }
-
-
-    // [HttpPost("/items")]
-    // public ActionResult Create(string description)
-    // {
-    //   Item myItem = new Item(description);
-    //   return RedirectToAction("Index");
-    // }
-
-    // [HttpPost("/items/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Item.ClearAll();
-    //   return View();
-    // }
+    [HttpGet("/vendors/{vendorId}/Orders/{InvoiceNumber}")]
+    public ActionResult Show(int vendorId, int InvoiceNumber)
+    {
+      Order order = Order.Find(InvoiceNumber);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
+    }
   }
 }

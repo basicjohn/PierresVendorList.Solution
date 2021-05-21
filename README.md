@@ -32,7 +32,7 @@ _This project is created to be a vendor list app written in C# to take orders fo
 ### Installation
 
 1. Clone the repository: `$ git clone https://github.com/basicjohn/PierresBakery.Solution.git`
-2. Navigate to the `PierresBakery.Solution/` directory on your computer
+2. Navigate to the `Pierres.Solution/` directory on your computer
 3. Open with your preferred text editor to view the code base
 4. To run the console app:
    - Navigate to `PierresBakery.Solution/PierresBakery` in your command line

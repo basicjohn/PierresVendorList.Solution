@@ -1,0 +1,87 @@
+/* Global Styles */
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat"), local("Montserrat-Regular"),
+    url("/fonts/Montserrat-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+body {
+  background-color: #f1f2f4;
+}
+.container {
+  padding: 50px;
+}
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 25px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+button {
+  width: 100%;
+  margin-top: 32px;
+  color: #fff;
+  background-color: #323232;
+}
+
+button:hover {
+  width: 100%;
+  margin-top: 32px;
+  color: #fff;
+  background-color: #323232;
+}
+
+/* Header Styles */
+header ul {
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: box;
+  text-align: center;
+}
+header ul li {
+  float: left;
+  font-size: 20px;
+}
+header ul li a {
+  color: #323232;
+}
+header ul li a:active,
+header ul li a:hover {
+  color: #000;
+}
+
+/* Form Styles */
+
+/* #planetary-age-tool {
+  border-color: #eaecf3;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #fff;
+} */
+
+input.form-control {
+  margin-top: 25px;
+  background-color: #f1f2f4;
+  border-color: #eaecf3;
+  color: #000;
+}
+.custom-select {
+  background-color: #f1f2f4;
+  border-color: #eaecf3;
+}
+
+/* Footer Styles */
+
+footer {
+  text-align: center;
+}

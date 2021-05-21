@@ -5,35 +5,35 @@ using PierresVendorList.Models;
 
 namespace PierresVendorList.Controllers
 {
-  // public class CategoriesController : Controller
-  // {
-  //   [HttpGet("/categories")]
-  //   public ActionResult Index()
-  //   {
-  //     List<Category> allCategories = Category.GetAll();
-  //     return View(allCategories);
-  //   }
-  //   [HttpGet("/categories/new")]
-  //   public ActionResult New()
-  //   {
-  //     return View();
-  //   }
-  //   [HttpPost("/categories")]
-  //   public ActionResult Create(string categoryName)
-  //   {
-  //     Category newCategory = new Category(categoryName);
-  //     return RedirectToAction("Index");
-  //   }
+  public class VendorsController : Controller
+  {
+    [HttpGet("/Vendors")]
+    public ActionResult Index()
+    {
+      List<Vendor> allVendors = Vendor.GetAll();
+      return View(allVendors);
+    }
+    [HttpGet("/Vendors/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
+    [HttpPost("/Vendors")]
+    public ActionResult Create(string VendorName, string description)
+    {
+      Vendor newVendor = new Vendor(VendorName, description);
+      return RedirectToAction("Index");
+    }
 
-  //   [HttpGet("/categories/{id}")]
-  //   public ActionResult Show(int id)
-  //   {
-  //     Dictionary<string, object> model = new Dictionary<string, object>();
-  //     Category selectedCategory = Category.Find(id);
-  //     List<Item> categoryItems = selectedCategory.Items;
-  //     model.Add("category", selectedCategory);
-  //     model.Add("items", categoryItems);
-  //     return View(model);
-  //   }
-  // }
+    [HttpGet("/Vendors/{vendorId}")]
+    public ActionResult Show(int vendorId)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(vendorId);
+      List<Order> VendorOrders = selectedVendor.Orders;
+      model.Add("Vendor", selectedVendor);
+      model.Add("Orders", VendorOrders);
+      return View(model);
+    }
+  }
 }

@@ -1,3 +1,19 @@
-<h1>Welcome to the Pierre's Vendor List!</h1>
-<a href='/items/new'>Add a new item</a>
-<a href='/items'>See list of items</a>
+@{
+  Layout = "_Layout";
+}
+<main class="container">
+
+  <h1>Welcome to Pierre's Bakery Vendor Manager</h1>
+  <h2>Manage vendor's and orders for each of your vendor</h2>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-6">
+        <button type="button" class="btn btn-dark" href='/vendor'>See All Vendors</button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-dark" href='/vendor/new'>Add a new vendor</button>
+      </div>
+    </div>
+  </div>
+
+</main>

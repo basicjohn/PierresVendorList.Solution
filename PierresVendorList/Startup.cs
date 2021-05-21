@@ -33,6 +33,8 @@ namespace PierresVendorList
         routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
       });
 
+      app.UseStaticFiles();
+
       app.Run(async (context) =>
       {
         await context.Response.WriteAsync("Hello World!");

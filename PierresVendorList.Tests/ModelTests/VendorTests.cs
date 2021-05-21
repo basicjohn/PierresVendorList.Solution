@@ -41,7 +41,7 @@ namespace PierresVendorList.Tests
       int invoiceId = 123854;
       Vendor newVendor = new Vendor("Sally's Cupcakes", "Sally makes regular orders to fill her baking needs.");
       Order newOrder = new Order("Sally's Cupcakes", "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
-      List<Vendor> newOrders = new List<Vendor> { newOrder };
+      List<Vendor> newV = new List<Vendor> { newOrders };
       newVendor.AddOrder(newOrder);
   
       int result = newVendor.Orders.IndexOf(1);
