@@ -22,8 +22,9 @@ namespace PierresVendorList.Models
       Title = title;
       Description = description;
       Total = total;
-      InvoiceNumber = invoiceNumber;
       _instances.Add(this);
+      InvoiceNumber = _instances.Count;
+
 
     }
 

@@ -1,6 +1,7 @@
 @{
   Layout = "_Layout";
 }
+
 <main class="container">
 
   <h1>Welcome to Pierre's Bakery Vendor Manager</h1>
@@ -8,12 +9,16 @@
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-6">
-        <button type="button" class="btn btn-dark" href='/vendor'>See All Vendors</button>
+        <button type="button" class="btn btn-dark" href='@Url.Action("index", "Vendor")'>See All Vendors</button>
       </div>
       <div class="col-md-6">
-        <button type="button" class="btn btn-dark" href='/vendor/new'>Add a new vendor</button>
+        <button type="button" class="btn btn-dark" href='@Url.Action("new", "Vendor")'>Add a new vendor</button>
       </div>
     </div>
   </div>
 
 </main>
+
+
+@* <button href='@Url.Action("Index", "Clients")' type="submit" value="Edit Client" class="btn btn-dark">Save Edited
+  Client</button> *@

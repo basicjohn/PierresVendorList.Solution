@@ -4,24 +4,24 @@ using System.Collections.Generic;
 
 namespace PierresVendorList.Controllers
 {
-  public class OrdersController : Controller
+  public class OrderController : Controller
   {
 
-    [HttpGet("/vendors/{vendorId}/Orders/new")]
+    [HttpGet("/vendor/{vendorId}/Order/new")]
     public ActionResult New(int vendorId)
     {
       Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
     }
 
-    [HttpPost("/Orders/delete")]
+    [HttpPost("/Order/delete")]
     public ActionResult DeleteAll()
     {
       Order.ClearAll();
       return View();
     }
 
-    [HttpGet("/vendors/{vendorId}/Orders/{InvoiceNumber}")]
+    [HttpGet("/vendor/{vendorId}/Order/{InvoiceNumber}")]
     public ActionResult Show(int vendorId, int InvoiceNumber)
     {
       Order order = Order.Find(InvoiceNumber);

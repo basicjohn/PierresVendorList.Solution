@@ -1,11 +1,11 @@
-@* @using PierresVendorList.Models;
-<h1>Categories</h1>
+@using PierresVendorList.Models;
+<h1>Vendors</h1>
 @if (@Model.Count == 0)
 {
-  <h3>No categories have been added yet!</h3>
+  <h3>No Vendors have been added yet!</h3>
 }
-@foreach (Category category in Model)
+@foreach (Vendor vendor in Model)
 {
-  <h3><a href='/categories/@category.Id'>@category.Name</a></h3>
+  <h3><a href='/vendor/@vendor.vendorId'>@vendor.Name</a></h3>
 }
-<p><a href='/'>Back home</a></p> *@
+<p><a href='/'>Back home</a></p>

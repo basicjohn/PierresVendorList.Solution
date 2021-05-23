@@ -35,7 +35,7 @@ namespace PierresVendorList.Tests
       int result = newVendor.vendorId;
       Assert.AreEqual(1, result);
     }
-
+    [TestMethod]
     public void GetId2_ReturnsVendorId2_Int()
     {
       string name = "Sally's Cupcakes";

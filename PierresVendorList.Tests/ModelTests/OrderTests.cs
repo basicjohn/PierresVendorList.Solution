@@ -39,7 +39,7 @@ namespace PierresVendorList.Tests
       string result = newOrder.VendorName;
       Assert.AreEqual(updatedVendorName, result);
     }
-
+    [TestMethod]
     public void GetInvoiceId_ReturnsInvoiceId_Int()
     {
       int invoiceId = 123854;

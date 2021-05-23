@@ -5,27 +5,27 @@ using PierresVendorList.Models;
 
 namespace PierresVendorList.Controllers
 {
-  public class VendorsController : Controller
+  public class VendorController : Controller
   {
-    [HttpGet("/Vendors")]
+    [HttpGet("/Vendor")]
     public ActionResult Index()
     {
       List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
     }
-    [HttpGet("/Vendors/new")]
+    [HttpGet("/Vendor/new")]
     public ActionResult New()
     {
       return View();
     }
-    [HttpPost("/Vendors")]
+    [HttpPost("/Vendor")]
     public ActionResult Create(string VendorName, string description)
     {
       Vendor newVendor = new Vendor(VendorName, description);
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/Vendors/{vendorId}")]
+    [HttpGet("/Vendor/{vendorId}")]
     public ActionResult Show(int vendorId)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
