@@ -6,7 +6,7 @@ namespace PierresVendorList.Models
   {
     private static List<Vendor> _vendors = new List<Vendor> { };
     public string Name { get; set; }
-    public int vendorId { get; }
+    public int vendorId { get; set; }
 
     public string Description { get; }
 
@@ -16,9 +16,9 @@ namespace PierresVendorList.Models
     {
       Name = vendorName;
       Description = description;
-      vendorId = _vendors.Count;
       Orders = new List<Order> { };
       _vendors.Add(this);
+      vendorId = _vendors.Count;
 
     }
     public static void ClearAll()

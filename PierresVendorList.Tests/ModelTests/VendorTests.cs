@@ -32,21 +32,30 @@ namespace PierresVendorList.Tests
     {
       string name = "Sally's Cupcakes";
       Vendor newVendor = new Vendor(name, "Sally makes regular orders to fill her baking needs.");
-      int result = newVendor.Id;
+      int result = newVendor.vendorId;
       Assert.AreEqual(1, result);
     }
 
-    public void GetVenderandOrder_ReturnsInvoiceNumber_Int()
+    public void GetId2_ReturnsVendorId2_Int()
     {
-      int invoiceId = 123854;
-      Vendor newVendor = new Vendor("Sally's Cupcakes", "Sally makes regular orders to fill her baking needs.");
-      Order newOrder = new Order("Sally's Cupcakes", "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
-      List<Vendor> newV = new List<Vendor> { newOrders };
-      newVendor.AddOrder(newOrder);
-  
-      int result = newVendor.Orders.IndexOf(1);
-      Assert.AreEqual(invoiceId, result);
+      string name = "Sally's Cupcakes";
+      Vendor newVendor = new Vendor(name, "Sally makes regular orders to fill her baking needs.");
+      Vendor anotherNewVendor = new Vendor(name, "Sally makes regular orders to fill her baking needs.");
+      int result = anotherNewVendor.vendorId;
+      Assert.AreEqual(2, result);
     }
+
+    // public void GetVenderandOrder_ReturnsInvoiceNumber_Int()
+    // {
+    //   int invoiceId = 123854;
+    //   Vendor newVendor = new Vendor("Sally's Cupcakes", "Sally makes regular orders to fill her baking needs.");
+    //   Order newOrder = new Order("Sally's Cupcakes", "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
+    //   List<Vendor> newV = new List<Vendor> { newOrder };
+    //   newVendor.AddOrder(newOrder);
+
+    //   int result = newVendor.Orders.IndexOf(1);
+    //   Assert.AreEqual(invoiceId, result);
+    // }
 
 
     // [TestMethod]
