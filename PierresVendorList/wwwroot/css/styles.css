@@ -24,14 +24,14 @@ h2 {
   margin-bottom: 25px;
 }
 
-button {
+a.btn-dark {
   width: 100%;
   margin-top: 32px;
   color: #fff;
   background-color: #323232;
 }
 
-button:hover {
+a.btn-dark:hover {
   width: 100%;
   margin-top: 32px;
   color: #fff;
