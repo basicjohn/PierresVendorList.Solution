@@ -41,7 +41,7 @@ namespace PierresVendorList.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(foundVendor.Name, date, title, description, invoiceNumber, total);
+      Order newOrder = new Order(vendorId, date, title, description, invoiceNumber, total);
       foundVendor.AddOrder(newOrder);
       List<Order> VendorOrders = foundVendor.Orders;
       model.Add("orders", VendorOrders);

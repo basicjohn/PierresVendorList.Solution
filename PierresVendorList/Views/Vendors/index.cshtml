@@ -18,5 +18,14 @@
       <a href='/vendors/@vendor.vendorId'>View Vendor Details</a>
     }
   }
-  <p><a href='/'>Back home</a></p>
+  <div class="row">
+    <hr>
+    <div class="col-md-6">
+      <a class="btn btn-dark" href='@Url.Action("New", "Vendors")' role="button" type="button">Add a new vendor</a>
+    </div>
+    <div class="col-md-6">
+      <a type="button" class="btn btn-dark" role="button" href='@Url.Action("index", "home")'>Back Home</a>
+    </div>
+  </div>
+  </div>
 </main>

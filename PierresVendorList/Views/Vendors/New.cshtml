@@ -6,13 +6,26 @@
 
   <h1>Create a New Vendor</h1>
   <h2>Fill out the form information and submit to add a new vendor</h2>
+ 
   <form action="/vendors" method="post">
-    <label for="Name">Name</label>
-    <input id="Name" name="Name" type="text">
-    <label for="Description">Description</label>
-    <input id="Description" name="Description" type="text">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Vendor Name</span>
+      </div>
+      @* <label for="Name">Name</label> *@
+      <input id="Name" class="form-control" name="Name" type="text">
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Description</span>
+      </div>
+      @* <label for="Description">Description</label> *@
+      <input id="Description" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+        name="Description" type="text">
+    </div>
     <button type="submit">Add</button>
   </form>
+
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-6">
