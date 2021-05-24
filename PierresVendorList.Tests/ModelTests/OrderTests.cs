@@ -10,42 +10,46 @@ namespace PierresVendorList.Tests
   {
     public void Dispose()
     {
-      Vendor.ClearAll();
+      Order.ClearAll();
     }
 
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_newOrder()
     {
-      Order newOrder = new Order("Sally's Cupcakes", "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
+      Vendor newVendor = new Vendor("Sally's Cupcakes", "Sally makes regular orders to fill her baking needs.");
+      Order newOrder = new Order(newVendor.vendorId, "2/29/2021", "example title", "27 loaves of Rustic bread", 48);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
     [TestMethod]
     public void GetVendorName_ReturnsVendorName_String()
     {
-      string vendorName = "Sally's Cupcakes";
-      Order newOrder = new Order(vendorName, "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
-      string result = newOrder.VendorName;
-      Assert.AreEqual(vendorName, result);
+      string orderTitle = "example title";
+      Vendor newVendor = new Vendor("Sally's Cupcakes", "Sally makes regular orders to fill her baking needs.");
+      Order newOrder = new Order(newVendor.vendorId, "2/29/2021", orderTitle, "27 loaves of Rustic bread", 48);
+      string result = newOrder.Title;
+      Assert.AreEqual(orderTitle, result);
     }
 
     [TestMethod]
     public void SetVendorName_SetVendorName_String()
     {
-      string vendorName = "Sally's Cupcakes";
-      Order newOrder = new Order(vendorName, "2/29/2021", "example title", "27 loaves of Rustic bread", 123854, 48);
-      string updatedVendorName = "Patty's Cupcakes";
-      newOrder.VendorName = updatedVendorName;
-      string result = newOrder.VendorName;
-      Assert.AreEqual(updatedVendorName, result);
+      string orderTitle = "example title";
+      Vendor newVendor = new Vendor("Sally's Cupcakes", "Sally makes regular orders to fill her baking needs.");
+      Order newOrder = new Order(newVendor.vendorId, "2/29/2021", orderTitle, "27 loaves of Rustic bread", 48);
+      string updatedOrderTitle = "new example title";
+      newOrder.Title = updatedOrderTitle;
+      string result = newOrder.Title;
+      Assert.AreEqual(updatedOrderTitle, result);
     }
     [TestMethod]
     public void GetInvoiceId_ReturnsInvoiceId_Int()
     {
-      int invoiceId = 123854;
-      Order newOrder = new Order("Sally's Cupcakes", "2/29/2021", "example title", "27 loaves of Rustic bread", invoiceId, 48);
+      int InvoiceNumber = 1;
+      Vendor newVendor = new Vendor("Sally's Cupcakes", "Sally makes regular orders to fill her baking needs.");
+      Order newOrder = new Order(newVendor.vendorId, "2/29/2021", "example title", "27 loaves of Rustic bread", 48);
       int result = newOrder.InvoiceNumber;
-      Assert.AreEqual(invoiceId, result);
+      Assert.AreEqual(InvoiceNumber, result);
     }
   }
 }
