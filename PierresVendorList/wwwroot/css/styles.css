@@ -24,22 +24,20 @@ h2 {
 h3 {
   text-align: center;
 }
-.display-results h1,
-.display-results h2,
-.display-results h3 {
-  text-align: left;
-}
-a.btn-dark {
+
+.btn-dark {
   width: 100%;
-  margin-top: 32px;
+  /* margin-top: 32px; */
+  font-weight: 600;
   color: #fff;
   background-color: #323232;
+  padding: 6px 12px;
 }
-a.btn-dark:hover {
+.btn-dark:hover {
   width: 100%;
-  margin-top: 32px;
+  /* margin-top: 32px; */
   color: #fff;
-  background-color: #323232;
+  background-color: #000;
 }
 
 /* Header Styles */
@@ -78,18 +76,66 @@ main {
 main.container {
   padding: 50px;
 }
+.display-results h1,
+.display-results h2,
+.display-results h3 {
+  text-align: left !important;
+}
 
 /* Form Styles */
 
-input.form-control {
-  margin-top: 25px;
-  background-color: #f1f2f4;
+form {
+  padding-left: 20ch;
+  padding-right: 20ch;
+  margin-bottom: 20ch;
+}
+
+.form-control,
+textarea {
+  /* margin-top: 25px; */
+  background-color: #fff;
   border-color: #eaecf3;
   color: #000;
+  margin-bottom: 15px;
 }
 .custom-select {
-  background-color: #f1f2f4;
+  background-color: #fff;
   border-color: #eaecf3;
+}
+
+/* Result Styles */
+
+.result {
+  margin: 5px 0 15px 0;
+  padding: 20px 20px 20px 20px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.result h3 {
+  margin-top: 0px;
+}
+
+.result h3 a,
+.result p a {
+  color: #323232;
+}
+
+.result a {
+  text-decoration: none;
+}
+
+#show-left {
+}
+#show-left h1 {
+  font-size: 20px;
+  margin-bottom: 5px !important;
+}
+#show-left h2 {
+  margin-bottom: 0px !important;
+}
+#show-left p {
+  font-size: 12px;
 }
 
 /* Footer Styles */

@@ -13,9 +13,11 @@
   {
     @foreach (Vendor vendor in Model)
     {
-      <h3><a href='/vendors/@vendor.vendorId'>@vendor.Name</a></h3>
-      <p><a href='/vendors/@vendor.vendorId'>@vendor.Description</a></p>
-      <a href='/vendors/@vendor.vendorId'>View Vendor Details</a>
+      <div class="result">
+        <h3><a href='/vendors/@vendor.vendorId'>@vendor.Name</a></h3>
+        <p><a href='/vendors/@vendor.vendorId'>@vendor.Description</a></p>
+        <a class="btn, btn-dark" href='/vendors/@vendor.vendorId'>View Vendor Details</a>
+      </div>
     }
   }
   <div class="row">
@@ -26,6 +28,5 @@
     <div class="col-md-6">
       <a type="button" class="btn btn-dark" role="button" href='@Url.Action("index", "home")'>Back Home</a>
     </div>
-  </div>
   </div>
 </main>

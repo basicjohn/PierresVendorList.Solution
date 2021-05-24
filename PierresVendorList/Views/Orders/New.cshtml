@@ -3,33 +3,18 @@
 }
 @using PierresVendorList.Models;
 <main class="container">
-
   <h1>Create a Order</h1>
   <h2>Fill out the form information and submit to add a Order</h2>
 
   <form action="/vendors/@Model.vendorId/orders" method="post">
-    @* <label for="vendorId">Vendors</label>
-      <select id="vendorId" class="custom-select" aria-label="Default select example">
-      <option selected>Select Vendor</option>
-      @foreach (Vendor vendor in @Model["vendor"])
-      {
-      <option value='@Model["vendor"].vendorId'>@Model["vendor"].Name</option>
-      }
-      </select> *@
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Title</span>
-      </div>
-      @* <label for="title">Title</label> *@
-      <input id="title" class="form-control" name="title" type="text">
-    </div>
-
+    <label for="title">Title</label>
+    <input id="title" class="form-control" name="title" type="text">
     <label for="description">Description</label>
     <input id="description" class="form-control" name="description" type="text">
     <label for="date">Order Date</label>
     <input id="date" class="form-control" name="date" type="text">
     <label for="total">Total</label>
     <input id="total" class="form-control" name="total" type="text">
-    <button type="submit">Add</button>
+    <button class="btn, btn-dark" type="submit">Add</button>
   </form>
 </main>

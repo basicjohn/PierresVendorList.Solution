@@ -3,26 +3,39 @@
 }
 @using PierresVendorList.Models;
 
-<main class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <h1>Vendor Details:</h1>
-      <h2>@Model["vendor"].Name</h2>
-      <p>@Model["vendor"].Description</p>
-      <p>Vendor ID Number: @Model["vendor"].vendorId</p>
-    </div>
-    @foreach (Order order in @Model["orders"])
-    {
-      <div class="order">
-        <h2>Invoice Number: @order.InvoiceNumber -- Order Date: @order.Date</h2>
-        <h3>@order.Title</h3>
-        <p>@order.Description</p>
-        <h4>Order Total: @order.Total</h4>
+<main class="container display-results">
+  <div class="col-md-12">
+    <div class="row result">
+      <div class="col-md-4" id="show-left">
+        <h1>Vendor Details:</h1>
+        <h2>@Model["vendor"].Name</h2>
+        <p>@Model["vendor"].Description</p>
+        <p>Vendor ID Number: @Model["vendor"].vendorId</p>
       </div>
-    }
-
-    <p><a href='/vendors/@Model["vendor"].vendorId/orders/new'>Add a new item</a></p>
-    @* <a href='/vendor/@Model.vendorId/order/new'>Add another order</a> *@
-    <a href='/orders'>View all orders</a>
+      <div class="col-md-8" id="show-right">
+        <h2>Vendor Orders</h2>
+        @foreach (Order order in @Model["orders"])
+        {
+          <div class="order">
+            <h3>Invoice Number: @order.InvoiceNumber -- Order Date: @order.Date</h3>
+            <h4>@order.Title</h4>
+            <p>@order.Description</p>
+            <h5>Order Total: @order.Total</h5>
+          </div>
+          <hr>
+        }
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <hr>
+    <div class="col-md-6">
+      <a class="btn btn-dark" href='/vendors/@Model["vendor"].vendorId/orders/new'>Add a new
+        order</a>
+    </div>
+    <div class="col-md-6">
+      <a type="button" class="btn btn-dark" role="button" href='@Url.Action("index", "vendor")'>Back Home</a>
+    </div>
+  </div>
+
 </main>
