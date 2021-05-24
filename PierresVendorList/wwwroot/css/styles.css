@@ -21,18 +21,20 @@ h2 {
   text-align: center;
   margin-bottom: 25px;
 }
-
 h3 {
   text-align: center;
 }
-
+.display-results h1,
+.display-results h2,
+.display-results h3 {
+  text-align: left;
+}
 a.btn-dark {
   width: 100%;
   margin-top: 32px;
   color: #fff;
   background-color: #323232;
 }
-
 a.btn-dark:hover {
   width: 100%;
   margin-top: 32px;
@@ -46,12 +48,10 @@ header {
   background-color: #fff;
   padding: 0px;
 }
-
 header .container {
   padding: 15px;
   text-align: center;
 }
-
 header .container ul {
   list-style-type: none;
   margin-left: auto;
@@ -70,26 +70,16 @@ header .container ul li a:active,
 header .container ul li a:hover {
   color: #000;
 }
-/* Main Styles */
 
+/* Main Styles */
 main {
   min-height: 75vh;
 }
-
 main.container {
   padding: 50px;
 }
 
 /* Form Styles */
-
-/* #planetary-age-tool {
-  border-color: #eaecf3;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 15px;
-  padding: 20px;
-  background-color: #fff;
-} */
 
 input.form-control {
   margin-top: 25px;
